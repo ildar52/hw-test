@@ -8,7 +8,7 @@ import (
 
 func PrintStaff(staff []types.Employee) {
 	for i := 0; i < len(staff); i++ {
-		str := fmt.Sprintf("UserID: %d; Age: %d; Name: %s; DepartmentID: %d", staff[i].UserID, staff[i].Age, staff[i].Name, staff[i].DepartmentID)
+		var str string = fmt.Sprintf("UserID: %d; Age: %d; Name: %s; DepartmentID: %d", staff[i].UserID, staff[i].Age, staff[i].Name, staff[i].DepartmentID)
 		fmt.Println(str)
 	}
 }
