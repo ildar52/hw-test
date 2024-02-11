@@ -3,15 +3,14 @@ package main
 import (
 	"fmt"
 
-	"github.com/ildar52/hw-test/printer"
-	"github.com/ildar52/hw-test/reader"
-	"github.com/ildar52/hw-test/types"
+	"github.com/ildar52/hw-test/hw02_fix_app/printer"
+	"github.com/ildar52/hw-test/hw02_fix_app/reader"
+	"github.com/ildar52/hw-test/hw02_fix_app/types"
 )
 
 func main() {
 	path := "data.json"
-	fmt.Printf("Enter data file path: ")
-	fmt.Scanln(&path)
+	fmt.Println("Enter data file path: ")
 
 	var err error
 	var staff []types.Employee
@@ -21,8 +20,9 @@ func main() {
 	}
 
 	staff, err = reader.ReadJSON(path)
-
-	fmt.Print(err)
+	if err != nil {
+		fmt.Print(err)
+	}
 
 	printer.PrintStaff(staff)
 }

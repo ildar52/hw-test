@@ -6,7 +6,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/ildar52/hw-test/types"
+	"github.com/ildar52/hw-test/hw02_fix_app/types"
 )
 
 func ReadJSON(
@@ -20,7 +20,7 @@ func ReadJSON(
 	bytes, err := io.ReadAll(f)
 	if err != nil {
 		fmt.Printf("Error: %v", err)
-		return nil, nil
+		return nil, err
 	}
 
 	var data []types.Employee
@@ -29,5 +29,5 @@ func ReadJSON(
 
 	res := data
 
-	return res, nil
+	return res, err
 }
